@@ -13,37 +13,117 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="components/modernizr/modernizr.js"></script>
+
         <!-- endbuild -->
     </head>
     <body>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>HTML5 Boilerplate</li>
-                    <li>Twitter Bootstrap</li>
-                    <li>RequireJS</li>
-                </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
+    <div class="blackback"></div>
+    <div class="container">
+        <div class="span6 offset3 loginpad">
+            <h3>欢迎来到测试，请登录</h3>
+            <div id="loginput">
+                <div class="innamebar row-fluid">
+                    <div class="span8">
+                        <input type="text" class="input loginname" placeholder="请在此输入昵称">
+                    </div>
+                    <div class="span4">
+                        <button id="loginBtn" type="submit" class="btn-block btn btn-large btn-primary">登&nbsp&nbsp录</button>
+                    </div>
+                </div>
+                <div class="progress progress-striped active stickItem">
+                    <div id="loginbar" class="bar" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div id="loading">
+                <div class="windows8">
+                <div class="wBall" id="wBall_1">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_2">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_3">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_4">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_5">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="banner">
+            <h1>框架测试~</h1>
+            <h4>by jin</h4>
+        </div>
+        <div class="row-fluid">
+            <div id="textlayyout" class="span8 textlayyout">
+                
+            </div>
+            <div class="btn-group btn-group-vertical span4 userlist">
+                
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span9 inputarea">
+                <textarea rows="3" class="txtarea span12"></textarea>
+            </div>
+            <div class="span3 controlarea">
+                <button id="sendBtn" class="testBtn btn-block">发送(Ctrl+Enter)</button>
+                <button class="testBtn btn-block btn-success" disabled>广&nbsp&nbsp播</button>
+            </div>
+        </div>
+        
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        
 
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="components/requirejs/require.js"></script>
         <!-- endbuild -->
-</body>
+    <div>
+    </body>
+<!--msg to me template-->
+<script type="text/template" id="msgToMe">
+    <div class="row-fluid msg">
+        <div class="span2">
+            <span class="label label-info masName"><%=fromUser%></span>
+        </div>
+        <div class="span9">
+            <div class="arrow"></div>
+            <div class="popup right"><%=msgText%></div>
+        </div>
+    </div>
+</script>
+<!--msg from me template-->
+<script type="text/template" id="myMsg">
+    <div class="row-fluid mysend">
+        <div class="span9 offset1">
+            
+            <div class="popup right"><div style="text-align:left"><%=msgText%></div></div>
+            <div class="arrow"></div>
+        </div>
+        <div class="span2 myname">
+            <span class="label label-success nameMe">我</span>
+        </div>
+        
+    </div>
+</script>
+<!--userList template-->
+<script type="text/template" id="userTemp">
+    <div id="usr_<%=userId%>" ><%=userName%></div>
+</script>
 </html>

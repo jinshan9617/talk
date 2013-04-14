@@ -1,6 +1,303 @@
 @import 'sass-bootstrap/lib/bootstrap';
+@import 'loading/loading';
+$red : red;
+$minpx : 10px;
+body{
+	margin: 0;
+}
+#loginput{
+	display: none;
+}
+#loading{
+	text-align: center;
+	padding-top: 15px;
+	padding-left: 200px;
+}
+.banner{
+	@extend .container;
+	@extend .label-inverse;
+	
+	margin-top: $minpx;
+	text-align: center;
+	h4{
+		text-align: right;
+		padding-right: 3*$minpx;
+	}
+	border-radius: 0.5*$minpx;
+	border-bottom: 1px solid #999;
+	box-shadow: 0px 1px 6px 2px #999; 
+	color: #fff;
+	vertical-align: middle;
+}
+.blackback{
+	position: fixed;
+	background-color: #999;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity:0.5;
+	z-index: 2000;
+	top: 0;
+	bottom:0;
+	left: 0;
+	right: 0;
+}
+.loginpad{
+	border: 1px solid #999;
+	border-radius: 7px;
+	background-color: #fff;
+	position: fixed;
+	z-index: 3000;
+	height: 150px;
+	top: 200px;
+	box-shadow: 2px 2px 5px #999;
+	h3{
+		line-height: 30px;
+		border-bottom: 1px #999 solid;
+		text-align: center;
+	}
+	.stickItem{
+		width: 90%;
+		margin-left: 5%;
+	}
+	.innamebar{
+		margin-left: 5%;
+		width: 90%;
+		height: 50px;
+		margin-top: 20px;
+	}
+	.loginname{
+		height: 35px;
+		line-height: 35px;
+		font-size: 25px;
+		width: 90%;
+	}
+}
+.userlist{
+	border: 1px lighten(#000,60%) solid;
+	border-radius: 0.5*$minpx;
+	margin-top: $minpx;
+	height: 40*$minpx;
+	overflow: auto;
+}
+.textlayyout{
+	@extend .userlist;
+	box-shadow: 2px -2px 5px #999 inset;
+}
+.inputarea{
+	margin-top: $minpx;
+}
+.txtarea{
+	border: 1px #999 solid;
+	line-height: 3*$minpx;
+	font-size: 24px;
+	box-shadow: 2px -2px 5px #999 inset;
+}
+.controlarea{
+	@extend .inputarea;
+}
+.msg{
+	width: 80%;
+	margin-left: 2*$minpx;
+	margin-top:2*$minpx;
+	span{
+		font-size: 2*$minpx;
+		line-height: 3*$minpx;
+	}
+	.popup{
+		@extend .alert-info;
+		font-size: 2*$minpx;
+		line-height: 2.5*$minpx;
+		word-wrap: break-word;
+		margin-top: -0.5*$minpx;
+		z-index: 1010;
+		max-width: 89%;
+		padding: $minpx;
+		text-align: left;
+		white-space: normal;
+		border: 1px solid lighten(blue,25%);
+		-webkit-border-radius: 6px;
+		 -moz-border-radius: 6px;
+		      border-radius: 6px;
+		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		 -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		-webkit-background-clip: padding-box;
+		 -moz-background-clip: padding;
+		      background-clip: padding-box;
+		      display: inline-block;
+	}
+	.arrow {
+		width: 0;
+		height: 0;
+		border-right: 11px solid lighten(blue,25%);
+		border-top: 11px solid transparent;
+		border-bottom: 11px solid transparent;
+		position: relative;
+		left: 5px;
+		top: 8px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.arrow:after{
+		border-right: 10px solid #d9edf7;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		content: "";
+		position: relative;
+		left: 1px;
+		top: -10px;
+		display: block;
+	}
+	
+}
+.mysend{
+	text-align: right;
+	margin-top:2*$minpx;
+	span{
+		font-size: 2*$minpx;
+		line-height: 3*$minpx;
+	}
+	.popup{
+		@extend .alert-success;
+		font-size: 2*$minpx;
+		line-height: 2.5*$minpx;
+		word-wrap: break-word;
+		margin-top: -0.5*$minpx;
+		z-index: 1010;
+		max-width: 89%;
+		padding: $minpx;
+		text-align: right;
+		white-space: normal;
+		border: 1px solid lighten(green,25%);
+		-webkit-border-radius: 6px;
+		 -moz-border-radius: 6px;
+		      border-radius: 6px;
+		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		 -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		-webkit-background-clip: padding-box;
+		 -moz-background-clip: padding;
+		      background-clip: padding-box;
+		      display: inline-block;
+	}
+	.arrow {
+		width: 0;
+		height: 0;
+		border-left: 11px solid lighten(green,25%);
+		border-top: 11px solid transparent;
+		border-bottom: 11px solid transparent;
+		position: relative;
+		left: -5px;
+		top: 8px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.arrow:after{
+		border-left: 10px solid #d9edf7;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		content: "";
+		position: relative;
+		left: -11px;
+		top: -10px;
+		display: block;
+	}
+}
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+.nameMe{
+	margin-left: 2*$minpx;
+}
+.myname{
+	text-align: left;
+}
+.mainlogo{
+	width: 50*$minpx;
+	margin: $minpx auto;
+	background-color: yellow;
+	border: 2px solid black;
+	h1{
+		text-align: center;
+		color: green;
+		font-size: 5*$minpx;
+		line-height: 8*$minpx;
+	}
+	p{
+		text-align: right;
+		color: black;
+		margin-right: $minpx;
+	}
+	h3{
+		margin-left: 2*$minpx;
+		font-size: 4*$minpx;
+		line-height: 6*$minpx;
+	}
+	ul{
+		list-style-type: none;
+		color: $red;
+		font-size: 28px;
+	}
+	li{
+
+		line-height: 36px;
+	}
+}
+.testBtn{
+	@extend .btn;
+	@extend .btn-large;
+	@extend .btn-primary;
+	margin-top: 2px;
+}
+.userBtn{
+	@extend .btn-large;
+	margin-top: 0;
+}
+.testBtn2{
+	@extend .btn;
+	@extend .btn-large;
+	@extend .btn-success;
+}
+.controle{
+	text-align: center;
+	margin-top: 2*$minpx;
+	margin-bottom: $minpx;
+}
+.mainClass{
+	@extend .container;
+	@extend .row;
+	width: 970px;
+	height: 10*$minpx;
+	line-height: 10*$minpx;
+	text-align: center;
+}
+@mixin borderr($ssolid){
+	border: 1px $ssolid black;
+}
+.layoutt3{
+	@include borderr(solid);
+	background: {
+		color: #ccc;
+	}
+	font: {
+		size: 24px;
+	}
+	color: darken(red,30%);
+
+}
+.layoutt6{
+	@include borderr(dashed);
+	background: {
+		color: lighten(green, 50%)
+	}
+}
+.list6{
+	@include borderr(dashed);
+	background: {
+		color: #ccc
+	}
+	color: darken(green,20%);
+	font: {
+		size:24px;
+	}
+	line-height: 4*$minpx;
+	padding-left: 20px;
 }
