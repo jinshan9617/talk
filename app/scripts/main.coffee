@@ -4,7 +4,7 @@ require.config {
         'bootstrap' : 'vendor/bootstrap'
         'backbone' : '../components/backbone/backbone'
         'underscore' : '../components/underscore/underscore'
-        'socket' : 'http://jinshan.ap01.aws.af.cm/socket.io/socket.io'
+        'socket' : 'http://localhost:8888/socket.io/socket.io'
     }
     shim:{
         'bootstrap' : {
@@ -67,7 +67,7 @@ require ['socket','jquery','shake','underscore','backbone','htmltrans','bootstra
             @changeName()
             if @model.check()
                 @bar.css "width","40%"
-                socket = io.connect 'http://jinshan.ap01.aws.af.cm',{}
+                socket = io.connect 'http://localhost:8888',{}
                 @input.attr "readonly",true
                 @$("button").attr "disabled",true
                 socket.on 'connect',() ->
