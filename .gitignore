@@ -4,4 +4,4 @@ dist/
 .sass-cache/
 app/components/
 test/
-app/script/main.js
+app/scripts/main.js
